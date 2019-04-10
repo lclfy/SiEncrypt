@@ -46,7 +46,9 @@ namespace SiEncryptApp
             string md5String = help.GetMD5String(computer);
             string registInfo = help.EncryptString(md5String);
             RegistFileHelper.WriteRegistFile(registInfo);
-            MessageBox.Show("注册码已生成");
+            MessageBox.Show("“RegisterInfo.key”已生成，发送至目标电脑并放置于待授权程序目录下即可。");
+            System.Diagnostics.Process.Start("explorer.exe", "/e,/select," + Application.StartupPath+ "\\RegistInfo.key");
+
         }
     }
 }
